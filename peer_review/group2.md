@@ -1,13 +1,22 @@
-# Question 2 suggestions
+# Peer Review For Proposal - Group 17 
 
-Question 1 is just too fundamental and seems quite obvious. Therefore, group 17 hopes to recommend some insights for investagating the orther question.
+Thank you for sharing your proposal – it’s clear that your group has put thoughtful effort into selecting a meaningful dataset and designing an environmentally impactful project. Below are a few suggestions that we hope can help refine and strengthen your work:
 
-## 1. Normalization
+# Question 1
 
-In terms of normalization, there is a very simple way to normalize these values: converting all output to a common unit like Gigajoule. This should be consistent with your statistics since industrial CO_2 emissions are tremendous.
+Your first question is “How have the total emissions from major entities changed over the years, and what are the key trends across different commodities?”. While this is a solid starting point, the insights may be quite expected (e.g., emissions rising over time due to industrial growth). To make this question more impactful and policy-relevant, here are a few directions you could consider:
 
-Another approach is to apply Z-scores within each commodity type. By accounting for differences in scale across commodities, you may identify outlier with abnormal emissions trend (weirdly high or unusual low).
+- Explore emission intensity (emissions per unit of production) to reveal how efficiently different commodities are produced over time.
+- Disaggregate trends by parent_type (investor-owned, state-owned, nation-state) to explore whether different ownership structures have different emission profiles.
+- Connect historical emissions to global policy milestones (e.g., the Kyoto Protocol, Paris Agreement) to explore cause-effect trends. Instead of just showing emissions rising, maybe you can try to identify moments of reduction or plateau, and explore why they happened? (e.g., shifts in commodity usage, policy changes, economic downturns).
+- You can also try to highlight xontributions from top emitters. A Pareto-style analysis (e.g., are 20% of entities responsible for 80% of emissions?) could provide a compelling narrative for targeting interventions.
 
-## 2. Visualization choices
+# Question 2
 
-When exploring clustering results, interactive scatter plots are an initial good idea (I guess). However, since you have mentioned the use of Silhouette Score, why don't ultilize it in visualization ?  Silhouette Plots sure can evaluate clustering quality thorugh different choice of k-value. Anyways, the use of Altair, Bokeh, or Plotly to obtain dynamic visualizations is considerably promising.
+The second question is really promising to analyze and has the potential to uncover hidden patterns across industries and company types. Here are a few gentle suggestions to take it even further. 
+
+To enhance your analysis, we suggest incorporating normalization techniques. Here are two simple yet effective approaches:
+- Unit Standardization: Convert emissions into a common energy unit like Gigajoules (GJ). This helps maintain consistency, especially given the massive scale of industrial CO₂ emissions across different commodities.
+- Z-score Normalization: Apply Z-score standardization within each commodity type. This approach adjusts for differences in scale and could help identify outliers or entities with unusually high or low emission trends.
+
+Regarding visualization, since you mentioned using Silhouette Scores, you can consider including Silhouette Plots to justify your choice of cluster number (k-value). Also, we suggest leveraging interactive visualizations using Altair, Bokeh, or Plotly, especially for exploring multi-dimensional clusters and letting users filter by commodity, ownership type, etc.
