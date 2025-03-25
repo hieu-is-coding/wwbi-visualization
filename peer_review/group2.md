@@ -9,7 +9,7 @@ Your first question is “How have the total emissions from major entities chang
 - Explore emission intensity (emissions per unit of production) to reveal how efficiently different commodities are produced over time.
 - Disaggregate trends by parent_type (investor-owned, state-owned, nation-state) to explore whether different ownership structures have different emission profiles.
 - Connect historical emissions to global policy milestones (e.g., the Kyoto Protocol, Paris Agreement) to explore cause-effect trends. Instead of just showing emissions rising, maybe you can try to identify moments of reduction or plateau, and explore why they happened? (e.g., shifts in commodity usage, policy changes, economic downturns).
-- You can also try to highlight xontributions from top emitters. A Pareto-style analysis (e.g., are 20% of entities responsible for 80% of emissions?) could provide a compelling narrative for targeting interventions.
+- You can also try to highlight contributions from top emitters. A Pareto-style analysis (e.g., are 20% of entities responsible for 80% of emissions?) could provide a compelling narrative for targeting interventions.
 
 ## Question 2
 
