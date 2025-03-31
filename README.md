@@ -43,11 +43,13 @@ We chose this dataset because it:
 - `region`
 
 #### 📊 Plan for Analysis
-- Filter dataset for the selected indicator.
-- Group by `region`, `income_group`, and `year`.
-- Use **line charts** with **facets by region** and **colors by income group**.
-- Apply a **log or fixed scale** to emphasize differences.
-- Highlight trends, outliers, and policy implications.
+- **Filtering relevant data**: Filter dataset for the selected indicator `BI.WAG.TOTL.GD.ZS`.
+- **Handing missing data**: Since `df.isnull().sum()` results in sparse value (~ 3% of rows), our team drops rows with `dropna()` for simplicity. If there is potential biases, we would consider imputation (e.g, median imputation, forward or backward fill, interpolation for time gaps).
+- **Aggregation**: Group by `region`, `income_group`, and `year`, then calculate the mean `value` for each group to smooth out country-level noise.
+- **Preprocessing**: As `df.value.hist()` illustrates Right-Skewed histogram, it is necessary to apply a **log scale** to emphasize regions' differences.
+- **Clustering**: Ultilize time-series clustering to show how countries’ wage bills change over time, aligning trends across regions and income groups.
+- **Visualiztion**: Use **line charts** with **facets by region** and **colors by income group**.
+- **Insight**: Highlight trends, outliers, and policy implications.
 
 ---
 
@@ -70,11 +72,13 @@ We chose this dataset because it:
 - `value`
 
 #### 📊 Plan for Analysis
-- Filter for Vietnam from 2010 to 2016 and select relevant gender representation indicators.
-- Group into two categories: **high-level** (managers, professionals, technicians) and **low-level** (clerks, elementary workers).
-- Calculate average female representation per group and compute the **gap** (high - low).
-- Compare public vs. private sectors using **grouped line plots** or **slope charts**.
-- Highlight trends in **career mobility** and potential **gender barriers**.
+- **Filtering relevant data**: Filter for Vietnam (`country_code` = `VNM`) from 2010 to 2016 and select relevant gender representation indicators (`indicator_code` contains `FE.ZS`).
+- **Handing missing data**: `df.isnull().sum()` is 0 for all variables.
+- **Aggregation**: Group into two categories: **high-level** (managers, professionals, technicians) and **low-level** (clerks, elementary workers).
+- **Preprocessing**: Calculate average female representation per group and compute the **gap** (high - low).
+- **Clustering**: Since multiple sectors are being investigated, K-mean clustering can help to reveal comparable patterns.
+- **Visualiztion**: Compare public vs. private sectors using **grouped line plots** or **slope charts**.
+- **Insight**: Highlight trends in **career mobility** and potential **gender barriers**.
 
 ---
 
@@ -84,6 +88,20 @@ We chose this dataset because it:
   - Regional aggregates or population statistics for normalization (e.g., labor force size)
 
 ---
+
+#### 💡 Responding to issues
+- *Short time frame choice (2010-2016) for second research question*
+  - According to the **wwbi_country.csv** dataset, Vietnam's `national_accounts_base_year` indicates 2010. Here the base year is a fixed parameter used for official accounting purposes.
+  - Since we narrow down our search to Vietnamese female, **wwbi_data.csv** only provides a range data from 2007 to 2016. However, this dataset also includes unofficial survey, we should count from the official base year from 2010. 
+  - Therefore the (short) time period ranges from 2010 to 2016 based on the context of dataset. However, the data is still abundant to visualization.
+
+- *Does the first research question indicate inefficiency or better governance?*
+  - Indeed, apart from the GDP public wages proportion, GDP growth, inflation, and policy changes also contribute to the judgement of governance's effectiveness. However, with rich resources from **Worldwide Bureaucracy Indicators**, it is still able to outline promising implications.
+  - For example, higher public wage bill can suggest extensive welfare services, for country like Sweden, where public sector employment supports universal healthcare and education. Or lower public wage bill can mean underinvestment in public services, leading to poor governance, especially in low-income countries where basic services like education are underfunded.
+
+- *Method for data preparation, normalization, clustering: Please see our update on **Research Questions***.
+
+--- 
 
 ## 📅 Timeline
 | Week | Task |
